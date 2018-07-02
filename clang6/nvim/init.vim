@@ -72,7 +72,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='dracula'
 
 " NERDTree
-"nmap <leader>n :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeToggle<cr>
 
 set wildmenu " visual autocomplete for command menu
 set lazyredraw

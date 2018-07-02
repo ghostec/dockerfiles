@@ -30,6 +30,7 @@ RUN add-apt-repository ppa:neovim-ppa/stable \
       && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # neovim plugins
+ADD nvim /root/.config/nvim
 RUN nvim --headless +PlugInstall +qa \
       && nvim --headless +UpdateRemotePlugins +qa
 # clang6
@@ -53,5 +54,3 @@ RUN apt-get purge cmake \
       && rm -rf cmake-3.11.4-Linux-x86_64
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-ADD nvim /root/.config/nvim
